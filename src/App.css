@@ -1,38 +1,144 @@
-.App {
-  text-align: center;
+:root{
+  --coldMorning: #E5E5E5;
+  --fieryCoral: #E16259;
+  --vegaViolet: #A259FF;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-color: var(--coldMorning);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-div{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+}
+.header-text{
+  font-weight: 700;
+  font-size: 24px;
+}
+.header-menu{
+  display: flex;
+  justify-content: space-between;
+}
+.menu-option{
+  margin: auto 1rem;
+  border-bottom: 2px solid transparent;
+}
+.menu-option:hover{
+  cursor: pointer;
+  border-bottom: 2px solid var(--fieryCoral);
+}
+.data-div{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 90%;
+  margin: auto;
+  grid-gap: 1.5rem;
+  margin: 5rem auto;
+}
+.data-card{
+  background-color: #fff;
+  padding:0.5rem 1rem;
+  box-shadow: -7px 3px 12px -6px rgba(0,0,0,0.45);
+  -webkit-box-shadow: -7px 3px 12px -6px rgba(0,0,0,0.45);
+  -moz-box-shadow: -7px 3px 12px -6px rgba(0,0,0,0.45);
+  border-radius: 6px;
+}
+.data-card:hover{
+  background-color: var(--vegaViolet);
+  cursor: pointer;
+}
+.data-card:hover > .data-name, .data-card:hover > .data-gender,.data-card:hover > .data-email{
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.data-gender{
+  color: black;
+}
+.data-gender{
+  text-transform: capitalize;
+}
+.data-name{
+  margin: 0 auto;
+  font-weight: 700;
+  font-size: 22px;
+}
+.data-email{
+  color: var(--fieryCoral);
+}
+.character-div{
+  width: 60%;
+  margin: 2rem auto;
+  background-color: #fff;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+img{
+  width: 200px;
+  border-radius:50%;
+}
+.char-name{
+  color: var(--fieryCoral);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+.char-gender{
+  text-transform: capitalize;
+  color: gray;
+}
+.country-span{
+  font-weight: bold;
+}
+.street-no-span{
+  color: gray;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (max-width:700px) {
+  .character-div{
+    display: block;
   }
-  to {
-    transform: rotate(360deg);
+  .data-div{
+    padding: 1rem;
+    display: block;
+    width: 90%;
+    margin: 2rem auto;
+  }
+  .data-card{
+    margin: 2rem;
+  }
+  img{
+    display: block;
+    margin: auto;
+  }
+}
+@media screen and (min-width:700px) and (max-width:1024px) {
+  .character-div{
+    width: 80%;
+    justify-content: space-between;
+  }
+  .char-details{
+    width: 60%;
+  }
+  img{
+    display: block;
+    margin: auto;
+  }
+  .data-div{
+    width: 90%;
+    grid-template-columns: 1fr 1fr;
+    margin: 5rem auto;
+  }
+}
+@media screen and (min-width:1024px) and (max-width:1400px){
+  
+  .data-div{
+    margin: 5rem auto;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .char-details{
+    width: 60%;
   }
 }
